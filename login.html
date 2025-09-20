@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - ProyecWeb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado (igual al de index.html) -->
+  <header>
+    <div class="logo">
+      <img src="logo.jpg.jpeg" alt="Logo ProyecWeb">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <a href="login.html" class="login-link">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login" class="icon-login">
+            Iniciar Sesión
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección principal del login -->
+  <main class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form>
+      <label for="email">Dirección de correo electrónico</label>
+      <input type="email" id="email" placeholder="Introduce tu correo" required>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Introduce tu contraseña" required>
+
+      <button type="submit" class="btn-login">Continuar</button>
+
+      <p class="divider">o bien</p>
+
+      <button type="button" class="btn-google">Iniciar sesión con Google</button>
+      <button type="button" class="btn-facebook">Iniciar sesión con Facebook</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ProyecWeb - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

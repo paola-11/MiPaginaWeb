@@ -1,0 +1,315 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ccc;
+  padding: 10px 20px;
+}
+header .logo img {
+  height: 40px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Contenido principal */
+main {
+  padding: 20px;
+  text-align: center;
+}
+main img {
+  width: 60%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+main h2 {
+  margin-top: 20px;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #444;
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+footer .redes img {
+  width: 24px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.titulo-seccion{ text-align:center; margin:30px 0; font-size:20px; }
+.grid-servicios{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width:1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.card{
+  background:#fff;
+  border:2px solid #ccc;
+  padding:10px;
+  text-align:left;
+  border-radius:6px;
+  cursor:pointer;
+}
+.card img{ width:100%; height:140px; object-fit:cover; border-radius:4px; }
+.card h3{ font-size:15px; margin:10px 0; }
+.card .precio{ background:#f7f7f7; padding:6px; border-radius:4px; text-align:center; margin-top:6px; font-weight:bold; }
+.card .ver-mas{ display:block; margin-top:10px; text-decoration:none; text-align:center; padding:8px; background:#000; color:#fff; border-radius:4px; }
+#detalle{ max-width:900px; margin:30px auto; padding:10px; text-align:center; }
+#detalle .precio{ font-size:18px; font-weight:bold; margin-top:12px; }
+
+/* Servicio */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #7b7a7a;
+  padding: 10px 20px;
+  color: white;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+#detalle {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#detalle h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.imagen-detalle {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+#detalle p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.icono {
+  margin-right: 8px;
+  color: #7b7a7a;
+}
+
+.btn-servicio {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.btn-servicio:hover {
+  background: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Login */
+/* Estilos del login */
+logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Contenedor del login */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Campos */
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botones */
+.btn-login {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: darkgreen;
+}
+
+.btn-google {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-facebook {
+  background: #1877f2;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/*Ícono Login*/ 
+.icon-login{
+
+
+    width: 20px; 
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.login-link {
+    display: flex; 
+    align-items: center;
+}
+
+/*Administrador - CRUD */
+admin-container {
+  padding: 2rem;
+}
+
+.admin-menu {
+  margin-bottom: 1rem;
+}
+
+.admin-menu button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.admin-menu button:hover {
+  background-color: #005fa3;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.admin-table th {
+  background-color: #0077cc;
+  color: white;
+  text-align: left;
+}
