@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - ProyecWeb</title>
+    <link rel="stylesheet" href="style.css"> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+    <div class="logo">
+      <img src="logo.jpg.jpeg" alt="Logo ProyecWeb">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <a href="login.html" class="login-link">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login" class="icon-login">
+            Iniciar Sesión
+          </a>
+        </li>
+                         <li><a href="admin.html">Panel Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+    <main class="main-content contacto-container">
+    <h2 class="title-section">Contáctanos y solicita tu servicio</h2>
+    <p class="subtitle-section">Estamos listos para ayudarte con tus proyectos. Rellena el formulario o utiliza nuestros canales de comunicación directa.</p>
+
+        <section class="contact-grid">
+            <div class="contact-form-area">
+        <h3>Formulario de Solicitud Rápida</h3>
+        <form id="contactForm" class="styled-form">
+          <label for="nombre">Nombre Completo</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="servicio_interes">Servicio de Interés</label>
+          <select id="servicio_interes" name="servicio_interes">
+            <option value="">Selecciona un servicio...</option>
+            <option value="mantenimiento">Mantenimiento Preventivo</option>
+            <option value="desarrollo_web">Diseño y Desarrollo Web</option>
+            <option value="recuperacion">Recuperación de Datos</option>
+            <option value="otro">Otro / Consulta General</option>
+          </select>
+
+          <label for="mensaje">Describe tu Necesidad (Detalles)</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+          <button type="submit" class="btn-primary">Enviar Solicitud</button>
+        </form>
+      </div>
+
+            <div class="contact-info-area">
+        <h3>Información de Contacto</h3>
+        <p>
+          <strong>📞 Teléfono:</strong> +57 310 123 4567<br>
+          <strong>📧 Email:</strong> info@proyecweb.com<br>
+          <strong>📍 Dirección:</strong> Calle Ficticia #123, Ciudad Digital
+        </p>
+        
+        <h3>Nuestra Ubicación</h3>
+        <div class="map-placeholder">
+          <p>Mapa simulado de la oficina central de ProyecWeb</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer>
+    <p>© 2025 ProyecWeb - Todos los derechos reservados</p>
+  </footer>
+  <script src="script.js"></script>
+  
+  <script>
+    $(function() {
+      // 1. Obtener el ID del servicio de la URL (query string)
+      const params = new URLSearchParams(window.location.search);
+      const serviceId = params.get('servicio_id');
+
+      if (serviceId) {
+        // 2. Mapear los IDs de la DB a los valores del SELECT en contacto.html
+        // Usamos 'desarrollo_web' y 'mantenimiento' para agrupar servicios relacionados
+        const serviceMap = {
+          '1': 'mantenimiento', // Mantenimiento preventivo de computadoras
+          '2': 'otro',          // Instalación de software 
+          '3': 'desarrollo_web', // Diseño de páginas web
+          '4': 'desarrollo_web', // Desarrollo de aplicaciones móviles
+          '5': 'recuperacion',   // Recuperación de datos
+          '6': 'mantenimiento',  // Eliminación de virus y malware
+          '7': 'desarrollo_web', // Optimización SEO
+          '8': 'otro',          // Instalación de redes WIFI
+          '9': 'otro',          // Capacitación en informática básica
+          '10': 'mantenimiento' // Instalación de antivirus y firewall
+        };
+        
+        const selectValue = serviceMap[serviceId] || 'otro';
+
+        // 3. Seleccionar el valor en el campo y notificar
+        $('#servicio_interes').val(selectValue);
+
+        // Opcional: Notificar al usuario que se precargó el campo
+        // $('#mensaje').val(`Interesado en el servicio ID: ${serviceId}. ${$('#servicio_interes option:selected').text()}. Por favor, dame más detalles.`)
+        // O una simple alerta:
+        alert(`¡Hemos precargado el servicio (${$('#servicio_interes option:selected').text()}) de tu interés! Completa los demás campos. 🚀`);
+      }
+      
+      // Manejo del Submit del formulario
+      $("#contactForm").submit(function(e) {
+        e.preventDefault();
+        alert("¡Solicitud enviada con éxito! Gracias por contactarnos, te responderemos pronto. ✅");
+        // Aquí iría el código real para enviar los datos a un servidor
+      });
+    });
+  </script>
+</body>
+</html>

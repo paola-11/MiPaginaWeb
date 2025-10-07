@@ -185,6 +185,8 @@ footer {
 
 /* Login */
 /* Estilos del login */
+
+
 logo img {
   max-width: 120px;
   height: auto;
@@ -258,7 +260,8 @@ logo img {
   color: #666;
 }
 
-/*Ícono Login*/ 
+/*Ícono Login*/
+
 .icon-login{
 
 
@@ -312,4 +315,144 @@ admin-container {
   background-color: #0077cc;
   color: white;
   text-align: left;
+}
+
+
+/* Esta regla es CRUCIAL para asegurar que el centrado funcione si hay conflictos */
+body, html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* 1. CONTENEDOR PRINCIPAL CENTRADO EN PANTALLA */
+.contacto-container {
+    padding: 40px 20px;
+    max-width: 1100px;
+
+    /* Centrado horizontal y vertical */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+
+    min-height: 100vh;       /* altura total de la pantalla */
+    box-sizing: border-box;
+}
+
+/* Títulos centrados */
+.title-section, .subtitle-section {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* 2. GRID DE DOS COLUMNAS */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr; /* columna principal + secundaria */
+    gap: 50px; 
+    width: 100%;
+    max-width: 900px; /* evita que se estire demasiado */
+    margin: 0 auto;   /* centrado horizontal */
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* una columna en móvil */
+        gap: 30px;
+    }
+}
+
+/* 3. CAJAS DEL FORMULARIO Y INFO */
+.contact-form-area, .contact-info-area {
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    height: fit-content;
+    margin: 0 auto; /* asegura centrado de cada caja */
+}
+
+.contact-form-area h3, .contact-info-area h3 {
+    color: #333; 
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center; 
+}
+
+/* 4. CAMPOS DEL FORMULARIO */
+.styled-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.styled-form input[type="text"], 
+.styled-form input[type="email"],
+.styled-form select,
+.styled-form textarea {
+    width: 100%;
+    padding: 12px; 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    font-size: 16px;
+}
+
+.styled-form textarea {
+    resize: vertical; /* permite cambiar tamaño vertical */
+}
+
+/* 5. BOTÓN PRINCIPAL */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%; 
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* 6. MAPA O PLACEHOLDER */
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* 7. RESPONSIVE GENERAL */
+@media (max-width: 480px) {
+    .contacto-container {
+        padding: 20px 10px;
+    }
+    
+    .contact-grid {
+        gap: 20px;
+    }
+    
+    .btn-primary {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
 }

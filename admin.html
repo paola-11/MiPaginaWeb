@@ -1,78 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel de Administrador - ProyecWeb</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador - ProyecWeb</title>
+  <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
-  <!-- Encabezado reutilizable -->
-  <header>
-    <div class="logo">
-      <img src="logo.jpg.jpeg"alt="Logo ProyecWeb">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="login.html">Iniciar Sesión</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+    <div class="logo">
+      <img src="logo.jpg.jpeg"alt="Logo ProyecWeb">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main class="admin-container">
-    <h2>Panel de Administración</h2>
+  <main class="admin-container">
+    <h2>Panel de Administración</h2>
 
-    <!-- Menú de opciones -->
-    <div class="admin-menu">
-      <button onclick="agregarServicio()">Agregar servicio</button>
-      <button onclick="editarServicio()">Editar</button>
-      <button onclick="eliminarServicio()">Eliminar</button>
-      <button onclick="verLista()">Ver lista</button>
-    </div>
+        <div class="admin-menu">
+      <button onclick="agregarServicio()">Agregar servicio</button>
+      <button onclick="editarServicio()">Editar</button>
+      <button onclick="eliminarServicio()">Eliminar</button>
+      <button onclick="verLista()">Ver lista</button>
+    </div>
 
-    <!-- Tabla de servicios -->
-    <table class="admin-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre del servicio</th>
-          <th>Descripción</th>
-          <th>Precio</th>
-        </tr>
-      </thead>
-      <tbody id="tablaServicios">
-        <tr>
-          <td>1</td>
-          <td>Diseño Web</td>
-          <td>Creación de páginas modernas y responsivas</td>
-          <td>$500</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Mantenimiento</td>
-          <td>Soporte técnico y actualización de sitios</td>
-          <td>$200</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+        <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre del servicio</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody id="tablaServicios">
+              </tbody>
+    </table>
+  </main>
 
-  <!-- Script de ejemplo para botones -->
-  <script>
-    function agregarServicio() {
-      alert("Función para agregar un servicio (por implementar).");
-    }
-    function editarServicio() {
-      alert("Función para editar un servicio (por implementar).");
-    }
-    function eliminarServicio() {
-      alert("Función para eliminar un servicio (por implementar).");
-    }
-    function verLista() {
-      alert("Mostrando lista de servicios...");
-    }
-  </script>
+    <script>
+    function agregarServicio() {
+      alert("Función para agregar un servicio (por implementar).");
+    }
+    function editarServicio() {
+      alert("Función para editar un servicio (por implementar).");
+    }
+    function eliminarServicio() {
+      alert("Función para eliminar un servicio (por implementar).");
+    }
+    function verLista() {
+      alert("Actualizando lista de servicios...");
+      cargarTablaAdmin(); // Llama a la nueva función de recarga si es necesario
+    }
+
+    // Función principal para cargar la tabla del administrador
+    function cargarTablaAdmin() {
+      const tbody = $('#tablaServicios');
+      tbody.empty(); // Limpia la tabla existente
+
+      // Iterar sobre el objeto de servicios global (definido en script.js)
+      for (const id in servicios) {
+        if (servicios.hasOwnProperty(id)) {
+          const servicio = servicios[id];
+          
+          // Crear la fila HTML
+          const fila = `
+            <tr data-id="${id}">
+              <td>${id}</td>
+              <td>${servicio.titulo}</td>
+              <td>${servicio.descripcion}</td>
+              <td>${servicio.precio}</td>
+            </tr>
+          `;
+          // Agregar la fila al cuerpo de la tabla
+          tbody.append(fila);
+        }
+      }
+    }
+    
+    // Ejecutar la función cuando el documento esté listo
+    $(document).ready(function() {
+      // Nos aseguramos de que solo se ejecute si estamos en admin.html
+      if ($('#tablaServicios').length) {
+        cargarTablaAdmin();
+      }
+    });
+
+  </script>
 </body>
 </html>

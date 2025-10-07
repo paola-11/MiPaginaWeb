@@ -89,27 +89,37 @@ const servicios = {
   }
 };
 
-// Al cargar la página
+// Al cargar la página (para servicio.html)
 $(function(){
   // obtener id del query string (ejemplo: detalle.html?id=3)
   const params = new URLSearchParams(window.location.search);
-  const id = params.get('id') || '1';
+  const id = params.get('id'); // Obtiene el ID (ej: '1', '2', etc.)
   const s = servicios[id];
 
-  if(!s){
-    $('#detalle').html('<p>Servicio no encontrado.</p>');
-    return;
+  // Solo ejecuta si estamos en servicio.html y se encuentra el ID
+  if(document.getElementById('detalle') && s){
+    
+    $('#titulo').text(s.titulo);
+    $('#imagen').attr('src', s.img).attr('alt', s.titulo);
+    $('#descripcion').text(s.descripcion);
+    $('#precio').text('Precio: ' + s.precio);
+    $('#disponibilidad').text('Disponibilidad: ' + s.disponibilidad);
+    $('#promocion').text('Promoción: ' + s.promocion);
+    
+    // ⭐️ CORRECCIÓN CLAVE: Enlazar el botón a contacto.html con el ID
+    $('.btn-servicio').attr('href', `contacto.html?servicio_id=${id}`);
+    
+  } else if (document.getElementById('detalle')) {
+    // Si estamos en servicio.html pero no hay ID válido
+    $('#detalle').html('<p>Servicio no encontrado o ID inválido.</p>');
   }
-
-  $('#titulo').text(s.titulo);
-  $('#imagen').attr('src', s.img).attr('alt', s.titulo);
-  $('#descripcion').text(s.descripcion);
-  $('#precio').text('Precio: ' + s.precio);
-  $('#disponibilidad').text('Disponibilidad: ' + s.disponibilidad);
-  $('#promocion').text('Promoción: ' + s.promocion);
 });
 
 //Login 
+// Nota: La simulación de login original en script.js usa document.getElementById("loginForm")
+// Como el HTML de login no tiene ese ID, esta función NO se está ejecutando actualmente.
+// Si deseas que funcione, debes agregar id="loginForm" al <form> en login.html.
+/*
 document.getElementById("loginForm").addEventListener("submit", function(event){
   event.preventDefault();
 
@@ -119,8 +129,9 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
   // Simulación de credenciales de administrador
   if(email === "admin@proyecweb.com" && password === "12345"){
     alert("Bienvenido Administrador");
-    window.location.href = "admin-dashboard.html"; // futura página de gestión
+    window.location.href = "admin.html"; // Redirigiendo a admin.html (el archivo provisto)
   } else {
     alert("Credenciales incorrectas. Inténtalo de nuevo.");
   }
 });
+*/

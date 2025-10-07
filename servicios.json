@@ -1,0 +1,82 @@
+[
+  { 
+    "id": 1, 
+    "nombre": "Mantenimiento Preventivo", 
+    "precio": 50, 
+    "descripcion": "Revisión completa de hardware y software para prevenir fallos, optimizar el sistema y extender la vida útil del equipo.",
+    "imagen": "img/mantenimiento.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 2, 
+    "nombre": "Diseño y Desarrollo Web", 
+    "precio": 500, 
+    "descripcion": "Creación de sitios web modernos, responsivos y optimizados para SEO, adaptados a tus necesidades de negocio.",
+    "imagen": "img/desarrollo.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 3, 
+    "nombre": "Recuperación de Datos", 
+    "precio": 350, 
+    "descripcion": "Servicio de recuperación profesional para información perdida o inaccesible de discos duros, SSDs y otros dispositivos.",
+    "imagen": "img/recuperacion.jpg",
+    "disponible": false
+  },
+  { 
+    "id": 4, 
+    "nombre": "Asesoría en Seguridad IT", 
+    "precio": 120, 
+    "descripcion": "Consultoría especializada para proteger tus sistemas contra amenazas cibernéticas y garantizar la integridad de tus datos.",
+    "imagen": "img/seguridad.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 5, 
+    "nombre": "Soporte Técnico Remoto", 
+    "precio": 40, 
+    "descripcion": "Solución instantánea de problemas de software y configuración a distancia, rápida y eficiente.",
+    "imagen": "img/soporte.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 6, 
+    "nombre": "Instalación de Redes LAN/WAN", 
+    "precio": 280, 
+    "descripcion": "Diseño e implementación de infraestructura de red robusta para hogares y oficinas.",
+    "imagen": "img/redes.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 7, 
+    "nombre": "Desarrollo de Apps Móviles", 
+    "precio": 900, 
+    "descripcion": "Creación de aplicaciones nativas o híbridas para iOS y Android.",
+    "imagen": "img/apps.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 8, 
+    "nombre": "Hosting y Dominio", 
+    "precio": 80, 
+    "descripcion": "Servicios completos de alojamiento web de alta velocidad y registro de dominio.",
+    "imagen": "img/hosting.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 9, 
+    "nombre": "Migración a la Nube (Cloud)", 
+    "precio": 450, 
+    "descripcion": "Asistencia técnica para migrar sistemas y datos a plataformas cloud (AWS, Azure, Google Cloud).",
+    "imagen": "img/cloud.jpg",
+    "disponible": true
+  },
+  { 
+    "id": 10, 
+    "nombre": "Actualización de Hardware", 
+    "precio": 150, 
+    "descripcion": "Instalación y configuración de nuevos componentes (RAM, SSD, tarjetas gráficas) para mejorar el rendimiento.",
+    "imagen": "img/hardware.jpg",
+    "disponible": true
+  }
+]
